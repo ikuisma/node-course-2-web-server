@@ -47,7 +47,12 @@ app.get('/about', (request, response) => {
   });
 });
 
-// /bad send json with an errorMessage property.
+app.get('/projects', (request, response) => {
+  response.render('projects.hbs', {
+    pageTitle: 'Portfolio'
+  })
+});
+
 app.get('/bad', (request, response) => {
   response.send({
     errorMessage: 'Life is hard sometimes, I am so sorry.'
